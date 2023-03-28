@@ -1,0 +1,7 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
+  "rules": {
+    "eol-last": "error",
+    "semi": 2
+  }
+}
