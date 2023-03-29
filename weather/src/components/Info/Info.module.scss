@@ -1,0 +1,24 @@
+.content {
+  display: grid;
+  grid-template-areas:
+    'a b'
+    'a c';
+  justify-content: center;
+  gap: 0.5rem;
+  &_title {
+    color: rgb(22, 62, 85);
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2rem;
+    grid-area: b;
+    align-self: flex-end;
+  }
+  &_subtitle {
+    color: rgb(22, 62, 85);
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    grid-area: c;
+    text-transform: uppercase;
+  }
+}

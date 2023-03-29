@@ -1,43 +1,30 @@
 export type Data = {
-  request: Request;
   location: Location;
   current: Current;
 };
 
 type Current = {
-  observation_time: string;
-  temperature: number;
-  weather_code: number;
-  weather_icons: string[];
-  weather_descriptions: string[];
-  wind_speed: number;
-  wind_degree: number;
-  wind_dir: string;
-  pressure: number;
-  precip: number;
+  last_updated: string;
+  temp_c: number;
+  temp_f: number;
+  is_day: number;
+  condition: {
+    text: string;
+    icon: string;
+    code: number;
+  };
+  wind_kph: number;
+  precip_mm: number;
   humidity: number;
-  cloudcover: number;
-  feelslike: number;
-  uv_index: number;
-  visibility: number;
-  is_day: string;
+  cloud: number;
+  uv: number;
+  gust_kph: number;
+  vis_km: number;
 };
 
 type Location = {
   name: string;
-  country: string;
   region: string;
-  lat: string;
-  lon: string;
-  timezone_id: string;
+  country: string;
   localtime: string;
-  localtime_epoch: number;
-  utc_offset: string;
-};
-
-type Request = {
-  type: string;
-  query: string;
-  language: string;
-  unit: string;
 };
