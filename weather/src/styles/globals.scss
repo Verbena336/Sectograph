@@ -56,5 +56,25 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: rgb(22, 62, 85);
+  background: linear-gradient(
+    -45deg,
+    rgb(27, 77, 106),
+    rgb(22, 62, 85),
+    rgb(85, 22, 40),
+    rgb(126, 32, 54)
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
