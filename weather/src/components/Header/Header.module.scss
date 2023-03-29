@@ -1,7 +1,8 @@
 .header {
   min-height: 4rem;
   height: 6vh;
-  background-color: aquamarine;
+  background-color: rgba(0, 0, 0, 0.267);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;

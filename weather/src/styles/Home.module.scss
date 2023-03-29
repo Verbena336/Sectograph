@@ -1,9 +1,13 @@
 .main {
-  flex: 1 1 auto;
+  // flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.footer {
-  min-height: 4rem;
-  height: 6vh;
-  background-color: aquamarine;
-}
+// .footer {
+//   min-height: 4rem;
+//   height: 6vh;
+//   background-color: aquamarine;
+// }

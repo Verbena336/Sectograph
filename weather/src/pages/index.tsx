@@ -1,6 +1,9 @@
 import Head from 'next/head';
-import styles from '@/styles/Home.module.scss';
+
 import Header from '@/components/Header';
+import Weather from '@/components/Weather';
+
+import styles from '@/styles/Home.module.scss';
 
 export default function Home() {
   return (
@@ -12,9 +15,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
-      <main className={styles.main}></main>
-      <footer className={styles.footer}></footer>
+      <main className={styles.main}>
+        <Weather />
+      </main>
     </>
   );
 }
