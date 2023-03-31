@@ -1,5 +1,6 @@
 .content {
   display: grid;
+  cursor: default;
   grid-template-areas:
     'a b'
     'a c';

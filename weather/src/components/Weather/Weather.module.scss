@@ -1,3 +1,10 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -11,14 +18,14 @@
 .header {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 1.5rem;
-  padding: 0 1rem;
+  width: clamp(0rem, 50rem, 100vw);
 }
 
 .title {
   font-size: 4rem;
   line-height: 4rem;
   margin-bottom: 1.5rem;
+  cursor: pointer;
   &_wrapper {
     display: flex;
     flex-direction: column;
@@ -33,6 +40,7 @@
 .subtitle {
   font-size: 1.8rem;
   line-height: 1.8rem;
+  cursor: default;
 }
 
 .degree {
@@ -42,6 +50,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  cursor: default;
 }
 
 .footer {
@@ -50,6 +59,46 @@
   z-index: 1;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  position: relative;
+}
+
+.overlay {
+  backdrop-filter: blur(20px);
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  top: -100vh;
+  position: absolute;
+  transition: 0.5s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.button {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: #edecec;
+}
+
+.input {
+  height: 5rem;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: rgb(22, 62, 85);
+  color: inherit;
+  font-family: inherit;
+  font-size: 2rem;
 }
 
 .background {

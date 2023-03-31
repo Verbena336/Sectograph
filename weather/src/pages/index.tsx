@@ -3,8 +3,6 @@ import Head from 'next/head';
 import Header from '@/components/Header';
 import Weather from '@/components/Weather';
 
-import styles from '@/styles/Home.module.scss';
-
 export default function Home() {
   return (
     <>
@@ -19,9 +17,7 @@ export default function Home() {
         />
       </Head>
 
-      <main className={styles.main}>
-        <Weather />
-      </main>
+      <Weather />
     </>
   );
 }
