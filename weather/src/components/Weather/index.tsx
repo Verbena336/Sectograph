@@ -1,6 +1,5 @@
 'use client';
 import { API_LINK } from '@/data/api';
-import Image from 'next/image';
 
 import { useState, useEffect, FormEvent } from 'react';
 
@@ -15,24 +14,38 @@ export default function Weather() {
   const [city, setCity] = useState<string>('Saint Petersburg');
   const [isModal, setIsModal] = useState<boolean>(false);
 
-  const fetchData = async () => {
-    const res = await fetch(`${API_LINK}${city}`);
+  const fetchData = async (cityToFetch: string) => {
+    const res = await fetch(`${API_LINK}${cityToFetch}`);
     const data = await res.json();
-    if (data.error) return;
-    setWeather(data);
+    if (data.error) {
+      setCity(localStorage.getItem('city') ?? 'Saint Petersburg');
+    } else {
+      setNewCity(cityToFetch);
+      setWeather(data);
+    }
+  };
+
+  const setNewCity = function (cityToSet: string) {
+    const capitalizeCityToFetch = cityToSet
+      .split(' ')
+      .map((item) => `${item.substring(0, 1).toUpperCase()}${item.slice(1)}`)
+      .join(' ');
+    localStorage.setItem('city', capitalizeCityToFetch);
+    setCity(capitalizeCityToFetch);
   };
 
   const handleSubmit = function (event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setIsModal(false);
-    if (!city.length) return;
-    fetchData();
-    localStorage.setItem('city', city);
+    if (!city.length) {
+      setCity(localStorage.getItem('city') ?? 'Saint Petersburg');
+    } else {
+      fetchData(city);
+    }
   };
 
   useEffect(() => {
-    // setCity(localStorage.getItem('city') ?? 'Saint Petersburg');
-    fetchData();
+    fetchData(localStorage.getItem('city') ?? 'Saint Petersburg');
   }, []);
 
   return weather ? (
