@@ -22,5 +22,8 @@
     "react-dom": "18.2.0",
     "sass": "^1.60.0",
     "typescript": "5.0.2"
+  },
+  "devDependencies": {
+    "eslint-plugin-prettier": "^4.2.1"
   }
 }
